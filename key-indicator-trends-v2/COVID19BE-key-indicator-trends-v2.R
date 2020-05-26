@@ -69,7 +69,7 @@ function(counts, trends, title, ylab, drop = 0) {
       panel.border = element_blank(),
       plot.margin = margin(t = 0, b = 20)) +
     labs(
-      y = "Growth rate") +
+      y = "Growth ratio") +
     scale_y_continuous(
       labels = function(...) scales::percent(accuracy = 1, ...)) +
     scale_x_date(
