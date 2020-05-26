@@ -1,3 +1,7 @@
+#' ---
+#' author: ""
+#' ---
+
 ## required packages
 library(EpiEstim)
 library(knitr)
