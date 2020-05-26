@@ -1,8 +1,10 @@
 # COVID19BE
-COVID-19 epidemiology in Belgium
+_COVID-19 epidemiology in Belgium_
 
 ## Reproduction number
 
-https://htmlpreview.github.io/?https://github.com/brechtdv/COVID19BE/blob/master/reproduction-number/reproduction-number.html
+Calculation of the reproduction number based on new hospital intakes using the [EpiEstim package](https://cran.r-project.org/package=EpiEstim)
 
-Based on the EpiEstim package: https://cran.r-project.org/package=EpiEstim
+[Click here](https://htmlpreview.github.io/?https://github.com/brechtdv/COVID19BE/blob/master/reproduction-number/reproduction-number.html) to view the HTML output
+
+Data source: https://epistat.wiv-isp.be/covid
