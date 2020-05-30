@@ -62,7 +62,9 @@ rev(
       to = as.Date("2020-03-22"),
       by = brks_by))
 
-p<-ggplot(df_trends, aes(x = DATE, y = INDICATOR)) +
+png("COVID19BE-key-indicator-trends-20200530.png",
+    width = 8, height = 2, units = "in", res = 300)
+ggplot(df_trends, aes(x = DATE, y = INDICATOR)) +
   geom_raster(aes(fill = GR)) +
   theme_bw() +
   theme(
@@ -88,4 +90,4 @@ p<-ggplot(df_trends, aes(x = DATE, y = INDICATOR)) +
   ggtitle(
     label = "Evolution of key COVID-19 indicators in Belgium",
     subtitle = "@brechtdv @sciensano | https://epistat.wiv-isp.be/covid/")
-
+dev.off()
