@@ -23,6 +23,10 @@ dta_case_agg <- aggregate(CASES ~ DATE, dta_case, sum)
 dta_mort_agg <- subset(dta_mort_agg, as.Date(DATE) >= "2020-03-15")
 dta_case_agg <- subset(dta_case_agg, as.Date(DATE) >= "2020-03-15")
 
+## expand cases data.frame if needed
+dta_case_agg <- merge(dta_case_agg, dta_mort_agg["DATE"], all = TRUE)
+dta_case_agg$CASES[is.na(dta_case_agg$CASES)] <- 0
+
 ## calculate moving averages
 hosp_new_walk <- rollmean(dta_hosp_new_agg$NEW_IN, 7)
 hosp_icu_walk <- rollmean(dta_hosp_icu_agg$TOTAL_IN_ICU, 7)
