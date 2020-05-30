@@ -79,7 +79,7 @@ p<-ggplot(df_trends, aes(x = DATE, y = INDICATOR)) +
     expand = expansion(0)) +
   scale_fill_gradient2(
     "Growth rate",
-    low = "#006838",
+    low = "#120F71",
     mid = "white",
     high = "#F15A22",
     midpoint = 0,
