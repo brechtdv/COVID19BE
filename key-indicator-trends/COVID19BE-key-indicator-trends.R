@@ -62,7 +62,7 @@ rev(
       to = as.Date("2020-03-22"),
       by = brks_by))
 
-png("COVID19BE-key-indicator-trends-20200530.png",
+png("COVID19BE-key-indicator-trends.png",
     width = 8, height = 2, units = "in", res = 300)
 ggplot(df_trends, aes(x = DATE, y = INDICATOR)) +
   geom_raster(aes(fill = GR)) +
