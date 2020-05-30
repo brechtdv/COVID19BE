@@ -107,6 +107,10 @@ dta_case_agg <- aggregate(CASES ~ DATE, dta_case, sum)
 dta_mort_agg <- subset(dta_mort_agg, as.Date(DATE) >= "2020-03-15")
 dta_case_agg <- subset(dta_case_agg, as.Date(DATE) >= "2020-03-15")
 
+## expand cases data.frame if needed
+dta_case_agg <- merge(dta_case_agg, dta_mort_agg["DATE"], all = TRUE)
+dta_case_agg$CASES[is.na(dta_case_agg$CASES)] <- 0
+
 ## calculate trends
 hosp_new_trend <- trend(dta_hosp_new_agg$NEW_IN)
 hosp_icu_trend <- trend(dta_hosp_icu_agg$TOTAL_IN_ICU)
