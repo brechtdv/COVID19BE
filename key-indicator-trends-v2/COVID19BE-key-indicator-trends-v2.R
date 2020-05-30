@@ -220,7 +220,7 @@ trend_plot(
   "Number of deaths",
   drop = 3)
 
-png("COVID19BE-key-indicator-trends-hist-v2-20200526.png",
+png("COVID19BE-key-indicator-trends-hist-v2-20200530.png",
     width = 10, height = 10, units = "in", res = 300)
 plot_grid(p1, p2, p3, p4, ncol = 2)
 dev.off()
