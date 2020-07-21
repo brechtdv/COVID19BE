@@ -64,7 +64,7 @@ df$INC <- 1e5 * df$CASES / df$POP
 
 ## final steps
 df$SEX <-
-  factor(df$SEX, levels = c("F", "M"), labels = c("Women", "Men"))
+  factor(df$SEX, levels = c("M", "F"), labels = c("Men", "Women"))
 head(df)
 
 
