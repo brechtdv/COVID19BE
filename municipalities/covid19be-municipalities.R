@@ -1,5 +1,5 @@
 ### COVID19BE // MUNICIPALITIES
-### 04/10/2020
+### 05/10/2020
 
 ## required packages
 library(ggplot2)
@@ -73,7 +73,9 @@ ggplot(dta, aes(x = INC14, y = DELTA, size = N14, color = PROV)) +
               "\u2190 Low incidence", "High incidence \u2192"),
     angle = c(90, 90, 0, 0),
     hjust = c(-0.1, 1.1, -0.1, 1.1),
-    vjust = c(1.5, -0.5, -0.5, 1.5)) +
+    vjust = c(1.5, -0.5, -0.5, 1.5),
+    size = 3.5,
+    color = "grey") +
   theme_bw() +
   theme(plot.caption.position =  "plot") +
   scale_x_continuous(
