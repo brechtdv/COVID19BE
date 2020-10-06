@@ -1,5 +1,5 @@
 ### COVID19BE // MUNICIPALITIES
-### 05/10/2020
+### 06/10/2020
 
 ## required packages
 library(ggplot2)
@@ -92,8 +92,8 @@ ggplot(dta, aes(x = INC14, y = DELTA, size = N14, color = PROV)) +
     color = "Province",
     title =
       sprintf("COVID19BE incidence and trends by municipality, %s to %s",
-              format(Sys.Date()-14, "%d/%m"),
-              format(Sys.Date(), "%d/%m")),
+              format(Sys.Date()-15, "%d/%m"),
+              format(Sys.Date()-1, "%d/%m")),
     caption =
       paste("Note: data are cases by date of reporting, not by date of diagnosis",
             "Source code: https://github.com/brechtdv/COVID19BE",
