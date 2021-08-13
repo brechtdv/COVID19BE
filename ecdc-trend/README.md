@@ -4,7 +4,7 @@ _COVID-19 epidemiology in Belgium_
 ## ECDC trends
 
 ### Regional classicifation according to ECDC criteria
-![](covid19be-ecdc-trend.png)
+![](COVID9BE-ecdc-trend.png)
 
 ### Read more
 
