@@ -40,4 +40,4 @@ jobs:
         git config --local user.name "GitHub Actions"
         git add ecdc-trend/*
         git commit -am "update $(date)"
-        git push origin main
+        git push origin master
