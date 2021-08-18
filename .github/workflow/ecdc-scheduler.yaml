@@ -18,7 +18,11 @@ jobs:
       matrix:
         config:
           - {os: windows-latest, r: 'release'}
-          
+
+    defaults:
+      run:
+        working-directory: ./ecdc-trend
+        
     # Load repo and install R
     steps:
     - uses: actions/checkout@v2
@@ -29,12 +33,10 @@ jobs:
       run: |
         R -e 'install.packages("ggplot2")'
         R -e 'install.packages("scales")'
-      working-directory: ecdc-trend
       
     # Run R script
     - name: Make plot
       run: Rscript covid19be-ecdc-trends.R
-      working-directory: ecdc-trend
       
     # Add new files in data folder, commit along with other modified files, push
     - name: Commit files
@@ -44,4 +46,3 @@ jobs:
         git add -all
         git commit -am "update $(date)"
         git push origin master
-      working-directory: ecdc-trend
