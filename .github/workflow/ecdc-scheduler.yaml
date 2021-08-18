@@ -5,8 +5,9 @@ name: ecdc_update
 # Every minute, to test it out
 on:
   schedule:
-    - cron:  '* * * * *'
-
+    - cron:  '0 08 * * *'
+  workflow_dispatch:
+  
 jobs: 
   plot:
     # The type of runner that the job will run on
