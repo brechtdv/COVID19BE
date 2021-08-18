@@ -75,6 +75,8 @@ str(df)
 
 ## plot
 col <- c("#66b32f", "#f2a82f", "#b73d18", "#7c170f")
+xmax <- max(0.06, max(df$PR) + 0.005)
+ymax <- max(500, max(df$INC14_RT) + 10)
 
 png("COVID9BE-ecdc-trend.png", 8, 6, units = "in", res = 300) 
 ggplot(df, aes(x = PR7, y = INC14_RT, group = REGION)) +
@@ -97,25 +99,25 @@ ggplot(df, aes(x = PR7, y = INC14_RT, group = REGION)) +
     xmin = 0.01, xmax = 0.04, ymin = 75, ymax = 200,
     fill = col[2], color = "black") +
   annotate("rect",
-    xmin = 0.04, xmax = 0.06, ymin = 0, ymax = 50,
+    xmin = 0.04, xmax = xmax, ymin = 0, ymax = 50,
     fill = col[2], color = "black") +
   annotate("rect",
-    xmin = 0.04, xmax = 0.06, ymin = 50, ymax = 75,
+    xmin = 0.04, xmax = xmax, ymin = 50, ymax = 75,
     fill = col[2], color = "black") +
   annotate("rect",
-    xmin = 0, xmax = 0.01, ymin = 200, ymax = 500,
+    xmin = 0, xmax = 0.01, ymin = 200, ymax = ymax,
     fill = col[3], color = "black") +
   annotate("rect",
-    xmin = 0.01, xmax = 0.04, ymin = 200, ymax = 500,
+    xmin = 0.01, xmax = 0.04, ymin = 200, ymax = ymax,
     fill = col[3], color = "black") +
   annotate("rect",
-    xmin = 0.04, xmax = 0.06, ymin = 200, ymax = 500,
+    xmin = 0.04, xmax = xmax, ymin = 200, ymax = ymax,
     fill = col[3], color = "black") +
   annotate("rect",
-    xmin = 0.04, xmax = 0.06, ymin = 75, ymax = 200,
+    xmin = 0.04, xmax = xmax, ymin = 75, ymax = 200,
     fill = col[3], color = "black") +
   geom_point(aes(fill = REGION),
-    shape = 21, color = "white", size = 5, stroke = 2) +
+    shape = 23, color = "white", size = 5, stroke = 2) +
   theme_bw() +
   labs(x = "7-day test positivity ratio",
        y = "14-day cumulative incidence rate") +
@@ -125,7 +127,7 @@ ggplot(df, aes(x = PR7, y = INC14_RT, group = REGION)) +
   scale_x_continuous(
     labels = scales::percent) +
   ggtitle(
-    "COVID19BE regional classification according to EDCD criteria",
+    "COVID19BE regional classification according to ECDC criteria",
     subtitle = paste("Situation on", dt))
 dev.off()
 
