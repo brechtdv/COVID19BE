@@ -8,14 +8,21 @@ on:
     - cron:  '* * * * *'
 
 jobs: 
-  autoscrape:
+  plot:
     # The type of runner that the job will run on
-    runs-on: ubuntu-latest
+    runs-on: ${{ matrix.config.os }}
+    name: ${{ matrix.config.os }} (${{ matrix.config.r }})
 
+    strategy:
+      fail-fast: false
+      matrix:
+        config:
+          - {os: windows-latest, r: 'release'}
+          
     # Load repo and install R
     steps:
-    - uses: actions/checkout@master
-    - uses: r-lib/actions/setup-r@master
+    - uses: actions/checkout@v2
+    - uses: r-lib/actions/setup-r@v1
 
     # Set-up R
     - name: Install packages
@@ -23,10 +30,10 @@ jobs:
         R -e 'install.packages("ggplot2")'
         R -e 'install.packages("scales")'
     # Run R script
-    - name: Scrape
+    - name: Make plot
       run: Rscript ecdc-trend/covid19be-ecdc-trends.R
       
- # Add new files in data folder, commit along with other modified files, push
+    # Add new files in data folder, commit along with other modified files, push
     - name: Commit files
       run: |
         git config --local user.email "actions@github.com"
