@@ -131,4 +131,5 @@ ggplot(df, aes(x = PR7, y = INC14_RT, group = REGION)) +
     subtitle = paste("Situation on", dt))
 dev.off()
 
-df
+## update README
+rmarkdown::render("README.Rmd")

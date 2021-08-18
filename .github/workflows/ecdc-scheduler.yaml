@@ -34,9 +34,7 @@ jobs:
       
     # Run R script
     - name: Make plot
-      run: |
-        Rscript covid19be-ecdc-trends.R
-        Rscript -e 'rmarkdown::render("README.Rmd")'
+      run: Rscript covid19be-ecdc-trends.R
 
     # Add new files in data folder, commit along with other modified files, push
     - uses: stefanzweifel/git-auto-commit-action@v4.6.0
