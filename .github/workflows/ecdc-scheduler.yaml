@@ -11,15 +11,9 @@ on:
 jobs: 
   plot:
     # The type of runner that the job will run on
-    runs-on: ${{ matrix.config.os }}
-    name: ${{ matrix.config.os }} (${{ matrix.config.r }})
-
-    strategy:
-      fail-fast: false
-      matrix:
-        config:
-          - {os: windows-latest, r: 'release'}
-
+    runs-on: ubuntu-latest
+    
+    # Default settings
     defaults:
       run:
         working-directory: ./ecdc-trend
@@ -32,18 +26,14 @@ jobs:
     # Set-up R
     - name: Install packages
       run: |
-        R -e 'install.packages("ggplot2")'
-        R -e 'install.packages("scales")'
+        Rscript -e 'install.packages("ggplot2")'
+        Rscript -e 'install.packages("scales")'
       
     # Run R script
     - name: Make plot
       run: Rscript covid19be-ecdc-trends.R
       
     # Add new files in data folder, commit along with other modified files, push
-    - name: Commit files
-      run: |
-        git config --local user.email "actions@github.com"
-        git config --local user.name "GitHub Actions"
-        git add -all
-        git commit -am "update $(date)"
-        git push origin master
+    - uses: stefanzweifel/git-auto-commit-action@v4.6.0
+        with:
+          commit_message: "Update plot"
