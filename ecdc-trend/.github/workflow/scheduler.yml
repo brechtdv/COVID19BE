@@ -1,0 +1,36 @@
+# Daily update
+name: ecdc_update
+
+# Controls when the action will run
+# Every minute, to test it out
+on:
+  schedule:
+    - cron:  '* * * * *'
+
+jobs: 
+  autoscrape:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Load repo and install R
+    steps:
+    - uses: actions/checkout@master
+    - uses: r-lib/actions/setup-r@master
+
+    # Set-up R
+    - name: Install packages
+      run: |
+        R -e 'install.packages("ggplot2")'
+        R -e 'install.packages("scales")'
+    # Run R script
+    - name: Scrape
+      run: Rscript covid19be-ecdc-trends.R
+      
+ # Add new files in data folder, commit along with other modified files, push
+    - name: Commit files
+      run: |
+        git config --local user.email "actions@github.com"
+        git config --local user.name "GitHub Actions"
+        git add --all
+        git commit -am "update $(date)"
+        git push origin main
