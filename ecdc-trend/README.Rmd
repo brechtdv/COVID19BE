@@ -11,7 +11,7 @@ _COVID-19 epidemiology in Belgium_
 ![](COVID9BE-ecdc-trend.png)
 
 ```{r, echo=FALSE}
-print("Hello")
+knitr::kable(df)
 ```
 
 ### Read more
