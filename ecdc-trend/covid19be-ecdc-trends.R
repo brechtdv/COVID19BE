@@ -71,12 +71,13 @@ df$REGION <- names(INC14)
 df$POP <- c(1219970, 6653062, 3648206)
 df$INC14_RT <- 1e5 * df$INC14 / df$POP
 df$PR7 <- df$TST_POS7 / df$TST7
+df$GR <- df$INC7 / (df$INC14 - df$INC7) - 1
 str(df)
 
 ## plot
-col <- c("#66b32f", "#f2a82f", "#b73d18", "#7c170f")
-xmax <- max(0.06, max(df$PR) + 0.005)
-ymax <- max(500, max(df$INC14_RT) + 10)
+col <- c("#66b32f", "#f2a82f", "#b73d18", "#7c170f", "#7d1006")
+xmax <- max(0.06, ceiling(100 * max(df$PR)) / 100)
+ymax <- max(500, ceiling(max(df$INC14_RT) / 100) * 100)
 
 png("COVID9BE-ecdc-trend.png", 8, 6, units = "in", res = 300) 
 ggplot(df, aes(x = PR7, y = INC14_RT, group = REGION)) +
@@ -108,14 +109,17 @@ ggplot(df, aes(x = PR7, y = INC14_RT, group = REGION)) +
     xmin = 0, xmax = 0.01, ymin = 200, ymax = ymax,
     fill = col[3], color = "black") +
   annotate("rect",
-    xmin = 0.01, xmax = 0.04, ymin = 200, ymax = ymax,
+    xmin = 0.01, xmax = 0.04, ymin = 200, ymax = min(500, ymax),
     fill = col[3], color = "black") +
   annotate("rect",
-    xmin = 0.04, xmax = xmax, ymin = 200, ymax = ymax,
+    xmin = 0.04, xmax = xmax, ymin = 200, ymax = min(500, ymax),
     fill = col[3], color = "black") +
   annotate("rect",
     xmin = 0.04, xmax = xmax, ymin = 75, ymax = 200,
     fill = col[3], color = "black") +
+  annotate("rect",
+    xmin = 0, xmax = xmax, ymin = 500, ymax = max(500, ymax),
+    fill = col[5], color = "black") +
   geom_point(aes(fill = REGION),
     shape = 23, color = "white", size = 5, stroke = 2) +
   theme_bw() +
