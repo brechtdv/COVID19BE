@@ -1,14 +1,18 @@
 ### COVID19BE // MUNICIPALITIES
-### 06/10/2020
+### 24/10/2021
 
 ## required packages
 library(ggplot2)
 library(ggrepel)
 
 ## import data
-dt1 <- format(Sys.Date() - 14, "%Y%m%d")
-dt2 <- format(Sys.Date() - 7, "%Y%m%d")
-dt3 <- format(Sys.Date(), "%Y%m%d")
+last_day <- Sys.Date()
+if (format(last_day, "%u") == 7) last_day <- last_day - 1
+if (format(last_day, "%u") == 1) last_day <- last_day - 2
+
+dt1 <- format(last_day - 14, "%Y%m%d")
+dt2 <- format(last_day - 7, "%Y%m%d")
+dt3 <- format(last_day, "%Y%m%d")
 
 dta1 <-
 read.csv(
@@ -92,8 +96,8 @@ ggplot(dta, aes(x = INC14, y = DELTA, size = N14, color = PROV)) +
     color = "Province",
     title =
       sprintf("COVID19BE incidence and trends by municipality, %s to %s",
-              format(Sys.Date()-15, "%d/%m"),
-              format(Sys.Date()-1, "%d/%m")),
+              format(last_day - 15, "%d/%m"),
+              format(last_day - 1, "%d/%m")),
     caption =
       paste("Note: data are cases by date of reporting, not by date of diagnosis",
             "Source code: https://github.com/brechtdv/COVID19BE",
