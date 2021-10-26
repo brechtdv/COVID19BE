@@ -48,7 +48,7 @@ data.frame(
           (as.numeric(dta2$CASES) - as.numeric(dta1$CASES)))
 
 ## calculate incidence per 100k
-load("POPNIS5.RData")  # objects 'POP' and 'POPNIS5'
+load("POPNIS5.Rdata")  # objects 'POP' and 'POPNIS5'
 dta <- merge(dta, POPNIS5)
 dta$INC14 <- 1e5 * dta$N14 / dta$MS_POPULATION
 
