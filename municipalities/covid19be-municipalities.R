@@ -1,5 +1,5 @@
 ### COVID19BE // MUNICIPALITIES
-### 24/10/2021
+### 26/10/2021
 
 ## required packages
 library(ggplot2)
@@ -61,7 +61,7 @@ id2 <- tail(dta[order(dta$DELTA), "MUNI"], 10)
 ## PLOT
 ##
 
-png("covid19be-municipalities.png", 12, 6, units = "in", res = 300)
+png("covid19be-municipalities.png", 12, 8, units = "in", res = 300)
 ggplot(dta, aes(x = INC14, y = DELTA, size = N14, color = PROV)) +
   geom_hline(yintercept = 0) +
   geom_point() +
