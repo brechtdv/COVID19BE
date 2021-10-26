@@ -59,7 +59,7 @@ data.frame(
   VAC = c(dta_vac_agg$VAC, NA))
 
 ## calculate incidence per 100k
-load("POPNIS5.RData")  # objects 'POP' and 'POPNIS5'
+load("POPNIS5.Rdata")  # objects 'POP' and 'POPNIS5'
 dta <- merge(dta, POPNIS5)
 dta$INC14 <- 1e5 * dta$N14 / dta$MS_POPULATION
 dta$NON_VAC_RT <- 1 - dta$VAC / dta$MS_POPULATION
