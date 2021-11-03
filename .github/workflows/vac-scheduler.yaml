@@ -4,7 +4,7 @@ name: vac_update
 # Controls when the action will run
 on:
   schedule:
-    - cron:  '0 04 * * *'
+    - cron:  '40 04 * * *'
   workflow_dispatch:
   
 jobs: 
