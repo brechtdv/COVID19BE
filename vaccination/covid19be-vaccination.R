@@ -69,8 +69,20 @@ id1 <- tail(dta[order(dta$INC14), "MUNI"], 5)
 id2 <- tail(dta[order(dta$NON_VAC_RT), "MUNI"], 5)
 (id <- unique(c(id1, id2)))
 
-## spearman correlation coefficient
-cor <- with(dta, cor.test(INC14, NON_VAC_RT, method = "spearman"))$estimate
+## spearman correlation coefficient // BE
+cor <- with(dta, cor.test(INC14, NON_VAC_RT, method = "spearman"))
+
+## spearman correlation coefficient // PROV
+cor_prov <-
+tapply(seq(nrow(dta)), dta$PROV,
+  function(x)
+    with(dta[x,], cor.test(INC14, NON_VAC_RT, method = "spearman")))
+cor_prov <-
+rbind(
+  as.data.frame(
+    t(sapply(cor_prov, function(x) unlist(x[c("estimate", "p.value")])))),
+  Belgium = data.frame(estimate.rho = cor$estimate,
+                       p.value = cor$p.value))
 
 ##
 ## PLOT
@@ -123,3 +135,6 @@ ggplot(dta, aes(x = INC14, y = NON_VAC_RT, size = N14, color = PROV)) +
             "Source code: https://github.com/brechtdv/COVID19BE",
             sep = "\n"))
 dev.off()
+
+## update README
+rmarkdown::render("README.Rmd")
