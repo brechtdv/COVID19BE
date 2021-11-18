@@ -18,4 +18,6 @@ _COVID-19 epidemiology in Belgium_
 knitr::kable(cor_prov, digits = 3)
 ```
 
-Data source: https://epistat.wiv-isp.be/covid/
+### Data source
+
+- https://epistat.wiv-isp.be/covid/

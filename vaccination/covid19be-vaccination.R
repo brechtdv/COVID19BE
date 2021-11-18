@@ -1,5 +1,5 @@
 ### COVID19BE // VACCINATION
-### 24/10/2021
+### 18/11/2021
 
 ## required packages
 library(ggplot2)
@@ -129,7 +129,7 @@ ggplot(dta, aes(x = INC14, y = NON_VAC_RT, size = N14, color = PROV)) +
               format(last_day - 1, "%d/%m")),
     subtitle =
       sprintf("Spearman correlation coefficient: %s",
-              formatC(cor, format = "f", digits = 3)),
+              formatC(cor$estimate, format = "f", digits = 3)),
     caption =
       paste("Note: data are cases by date of reporting, not by date of diagnosis",
             "Source code: https://github.com/brechtdv/COVID19BE",

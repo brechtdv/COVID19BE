@@ -26,4 +26,6 @@
 | WestVlaanderen |        0.132 |   0.299 |
 | Belgium        |      \-0.415 |   0.000 |
 
-Data source: <https://epistat.wiv-isp.be/covid/>
+### Data source
+
+  - <https://epistat.wiv-isp.be/covid/>
