@@ -27,6 +27,8 @@ jobs:
       run: |
         Rscript -e 'install.packages("ggplot2")'
         Rscript -e 'install.packages("ggrepel")'
+        Rscript -e 'install.packages("knitr")'
+        Rscript -e 'install.packages("rmarkdown")'
       
     # Run R script
     - name: Make plot
