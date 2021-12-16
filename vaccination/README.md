@@ -13,18 +13,18 @@
 
 |                | estimate.rho | p.value |
 | :------------- | -----------: | ------: |
-| Antwerpen      |      \-0.338 |   0.005 |
-| BrabantWallon  |        0.148 |   0.459 |
-| Brussels       |      \-0.902 |   0.000 |
-| Hainaut        |      \-0.440 |   0.000 |
-| Liège          |      \-0.340 |   0.002 |
-| Limburg        |        0.035 |   0.826 |
-| Luxembourg     |      \-0.014 |   0.926 |
-| Namur          |        0.069 |   0.679 |
-| OostVlaanderen |      \-0.241 |   0.064 |
-| VlaamsBrabant  |      \-0.342 |   0.005 |
-| WestVlaanderen |        0.123 |   0.331 |
-| Belgium        |      \-0.447 |   0.000 |
+| Antwerpen      |      \-0.394 |   0.001 |
+| BrabantWallon  |        0.051 |   0.802 |
+| Brussels       |      \-0.918 |   0.000 |
+| Hainaut        |      \-0.415 |   0.000 |
+| Liège          |      \-0.312 |   0.004 |
+| Limburg        |        0.037 |   0.817 |
+| Luxembourg     |        0.014 |   0.928 |
+| Namur          |        0.041 |   0.808 |
+| OostVlaanderen |      \-0.205 |   0.117 |
+| VlaamsBrabant  |      \-0.262 |   0.035 |
+| WestVlaanderen |        0.150 |   0.236 |
+| Belgium        |      \-0.383 |   0.000 |
 
 ### Data source
 
