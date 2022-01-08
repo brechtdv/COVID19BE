@@ -1,5 +1,5 @@
 ### COVID19BE // HOSPI AGE
-### 27/11/2021
+### 08/01/2022
 
 ## required packages
 library(ggplot2)
@@ -22,7 +22,7 @@ str(dta_hosp)
 dta_age$WEEK <-
   as.numeric(gsub(")", "", gsub(".*Week ", "", dta_age$JAAR.WEEK)))
 dta_age$YEAR <-
-  as.numeric(gsub(".* ", "", gsub(" \\(Week.*", "", dta_age$JAAR.WEEK)))
+  as.numeric(gsub(".* ", "", gsub(" t/m.*", "", dta_age$JAAR.WEEK)))
 
 ## factorize dta_age AgeGroup
 dta_age$AGE <-
@@ -43,7 +43,8 @@ dta_hosp_wk <-
   aggregate(NEW_IN ~ YEARWEEK, dta_hosp, sum)
 
 ## compile data
-dta_age$YEARWEEK <- paste0(dta_age$YEAR, "-", dta_age$WEEK)
+dta_age$YEARWEEK <-
+  paste0(dta_age$YEAR, "-", ifelse(dta_age$WEEK < 10, "0", ""), dta_age$WEEK)
 dta <- merge(dta_hosp_wk, dta_age)
 dta$NEW_IN_AGE <- dta$NEW_IN * dta$HOSPITALISATIONS
 head(dta)
