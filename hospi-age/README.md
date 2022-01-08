@@ -9,6 +9,12 @@ _COVID-19 epidemiology in Belgium_
 ### COVID-19 hospitalisations by age and week - line plot
 ![](covid19be-hospi-age-lines.png)
 
+### COVID-19 hospitalisations by week, children under 5
+![](covid19be-hospi-under5.png)
+
+### COVID-19 hospitalisations by week, children under 20
+![](covid19be-hospi-under20.png)
+
 ## Data sources
 
 - New hospital admissions: https://epistat.wiv-isp.be/covid/
