@@ -98,3 +98,45 @@ ggplot(dta, aes(x = YEARWEEK, y = NEW_IN_AGE, color = AGE, group = AGE)) +
             "Source code: https://github.com/brechtdv/COVID19BE",
             sep = "\n"))
 dev.off()
+
+png("covid19be-hospi-under5.png", 12, 6, units = "in", res = 300)
+ggplot(subset(dta, AGE == "0-5"),
+  aes(x = YEARWEEK, y = NEW_IN_AGE, fill = AGE)) +
+  geom_col() +
+  scale_x_discrete(breaks = brks) +
+  theme_bw() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1)) +
+  labs(
+    y = "Number of new hospital admissions",
+    x = NULL,
+    fill = "Age group",
+    title =
+      sprintf("COVID19BE hospital admissions for children under 5, %s to %s",
+              min(dta$YEARWEEK),
+              max(dta$YEARWEEK)),
+    caption =
+      paste("Data: https://epistat.wiv-isp.be/covid/",
+            "Source code: https://github.com/brechtdv/COVID19BE",
+            sep = "\n"))
+dev.off()
+
+png("covid19be-hospi-under20.png", 12, 6, units = "in", res = 300)
+ggplot(subset(dta, AGE %in% c("0-5", "6-19")),
+  aes(x = YEARWEEK, y = NEW_IN_AGE, fill = AGE)) +
+  geom_col() +
+  scale_x_discrete(breaks = brks) +
+  theme_bw() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1)) +
+  labs(
+    y = "Number of new hospital admissions",
+    x = NULL,
+    fill = "Age group",
+    title =
+      sprintf("COVID19BE hospital admissions for children under 20, %s to %s",
+              min(dta$YEARWEEK),
+              max(dta$YEARWEEK)),
+    caption =
+      paste("Data: https://epistat.wiv-isp.be/covid/",
+            "Source code: https://github.com/brechtdv/COVID19BE",
+            sep = "\n"))
+dev.off()
