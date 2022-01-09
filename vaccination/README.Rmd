@@ -19,6 +19,11 @@ _COVID-19 epidemiology in Belgium_
 
 ```{r, echo=FALSE}
 knitr::kable(cor_prov_bc, digits = 3)
+```
+
+### Correlation cumulative incidence vs booster rate
+
+```{r, echo=FALSE}
 knitr::kable(cor_prov_e, digits = 3)
 ```
 
