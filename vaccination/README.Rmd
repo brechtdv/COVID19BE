@@ -12,10 +12,14 @@ _COVID-19 epidemiology in Belgium_
 ### COVID-19 14-day cumulative incidence vs vaccination rate by municipality
 ![](covid19be-vaccination.png)
 
+### COVID-19 14-day cumulative incidence vs booster rate by municipality
+![](covid19be-vaccination-booster.png)
+
 ### Correlation cumulative incidence vs vaccination rate
 
 ```{r, echo=FALSE}
-knitr::kable(cor_prov, digits = 3)
+knitr::kable(cor_prov_bc, digits = 3)
+knitr::kable(cor_prov_e, digits = 3)
 ```
 
 ### Data source
