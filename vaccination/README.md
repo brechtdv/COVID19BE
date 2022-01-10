@@ -30,6 +30,8 @@
 | WestVlaanderen |      \-0.141 |   0.267 |
 | Belgium        |        0.168 |   0.000 |
 
+### Correlation cumulative incidence vs booster rate
+
 |                | estimate.rho | p.value |
 | :------------- | -----------: | ------: |
 | Antwerpen      |        0.284 |   0.018 |
