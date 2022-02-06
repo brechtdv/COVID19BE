@@ -61,8 +61,8 @@ data.frame(
 
 ## plot
 col <- c("#ffd515", "#f28c00", "#d31026")
-xmax <- max(550, 1.1 * max(df$TOTAL_IN_ICU))
-ymax <- max(175, 1.1 * max(df$NEW_IN_7))
+xmax <- max(550, 1.1 * max(df_trend$TOTAL_IN_ICU))
+ymax <- max(175, 1.1 * max(df_trend$NEW_IN_7))
 
 png("COVID9BE-barometer.png", 8, 6, units = "in", res = 300) 
 ggplot(df, aes(x = TOTAL_IN_ICU, y = NEW_IN_7)) +
