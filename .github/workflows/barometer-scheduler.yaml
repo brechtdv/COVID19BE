@@ -4,7 +4,7 @@ name: barry_update
 # Controls when the action will run
 on:
   schedule:
-    - cron:  '20 04 * * *'
+    - cron:  '0 05 * * *'
   workflow_dispatch:
   
 jobs: 
