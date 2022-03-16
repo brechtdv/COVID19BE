@@ -17,35 +17,35 @@
 
 |                | estimate.rho | p.value |
 | :------------- | -----------: | ------: |
-| Antwerpen      |      \-0.049 |   0.687 |
-| BrabantWallon  |      \-0.225 |   0.259 |
-| Brussels       |        0.018 |   0.945 |
-| Hainaut        |      \-0.113 |   0.353 |
-| Liège          |      \-0.125 |   0.258 |
-| Limburg        |      \-0.074 |   0.638 |
-| Luxembourg     |      \-0.040 |   0.798 |
-| Namur          |        0.125 |   0.458 |
-| OostVlaanderen |      \-0.010 |   0.939 |
-| VlaamsBrabant  |      \-0.020 |   0.872 |
-| WestVlaanderen |        0.088 |   0.488 |
-| Belgium        |      \-0.083 |   0.045 |
+| Antwerpen      |      \-0.091 |   0.459 |
+| BrabantWallon  |      \-0.216 |   0.279 |
+| Brussels       |        0.037 |   0.883 |
+| Hainaut        |      \-0.055 |   0.653 |
+| Liège          |      \-0.116 |   0.291 |
+| Limburg        |      \-0.062 |   0.696 |
+| Luxembourg     |      \-0.007 |   0.964 |
+| Namur          |        0.035 |   0.835 |
+| OostVlaanderen |      \-0.029 |   0.824 |
+| VlaamsBrabant  |      \-0.011 |   0.929 |
+| WestVlaanderen |        0.051 |   0.691 |
+| Belgium        |      \-0.084 |   0.044 |
 
 ### Correlation cumulative incidence vs booster rate
 
 |                | estimate.rho | p.value |
 | :------------- | -----------: | ------: |
-| Antwerpen      |      \-0.058 |   0.635 |
-| BrabantWallon  |      \-0.216 |   0.279 |
-| Brussels       |        0.000 |   1.000 |
-| Hainaut        |      \-0.119 |   0.329 |
-| Liège          |      \-0.109 |   0.321 |
-| Limburg        |      \-0.065 |   0.683 |
-| Luxembourg     |      \-0.027 |   0.859 |
-| Namur          |        0.121 |   0.474 |
-| OostVlaanderen |      \-0.005 |   0.970 |
-| VlaamsBrabant  |      \-0.043 |   0.731 |
-| WestVlaanderen |        0.089 |   0.482 |
-| Belgium        |      \-0.139 |   0.001 |
+| Antwerpen      |      \-0.098 |   0.422 |
+| BrabantWallon  |      \-0.200 |   0.315 |
+| Brussels       |        0.016 |   0.951 |
+| Hainaut        |      \-0.063 |   0.608 |
+| Liège          |      \-0.106 |   0.338 |
+| Limburg        |      \-0.059 |   0.711 |
+| Luxembourg     |        0.004 |   0.979 |
+| Namur          |        0.040 |   0.815 |
+| OostVlaanderen |      \-0.024 |   0.858 |
+| VlaamsBrabant  |      \-0.038 |   0.766 |
+| WestVlaanderen |        0.052 |   0.684 |
+| Belgium        |      \-0.140 |   0.001 |
 
 ### Data source
 
