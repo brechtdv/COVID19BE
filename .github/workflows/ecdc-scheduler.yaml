@@ -3,8 +3,6 @@ name: ecdc_update
 
 # Controls when the action will run
 on:
-  schedule:
-    - cron:  '20 04 * * *'
   workflow_dispatch:
   
 jobs: 
@@ -21,7 +19,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - uses: r-lib/actions/setup-r@v2
-    - uses: r-lib/actions/setup-pandoc@v1
+    - uses: r-lib/actions/setup-pandoc@v2
 
     # Set-up R
     - name: Install packages
